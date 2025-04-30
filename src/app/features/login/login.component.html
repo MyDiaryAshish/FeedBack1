@@ -1,0 +1,20 @@
+<ng-container *ngIf="loading">
+  <div class="login-container" >
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="email" formControlName="email" placeholder="Email" />
+      <input type="password" formControlName="password" placeholder="Password" />
+      <button type="submit" [disabled]="loading">Login</button>
+    </form>
+
+    <button (click)="loginWithGoogle()" [disabled]="loading">Login with Google</button>
+
+    <div *ngIf="error" class="error">{{ error }}</div>
+  </div>
+</ng-container>
+
+<ng-template #loadingTemplate>
+  <div>
+    Loading...
+  </div>
+</ng-template>
+
