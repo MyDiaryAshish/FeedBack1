@@ -1,5 +1,6 @@
 <div class="container">
-
   <h2>Welcome to the Dashboard!</h2>
-  <p>You are successfully logged in.</p>
+  <div *ngIf="user$ | async as user">
+    <p><strong>{{ user.displayName }}</strong> </p>
+  </div>
 </div>

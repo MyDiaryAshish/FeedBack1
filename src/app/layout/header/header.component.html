@@ -1,0 +1,8 @@
+<header class="app-header">
+  <div class="container">
+    <ng-container *ngIf="user$ | async as user">
+      <span>{{ user.email }}</span>
+      <button (click)="logout()">Logout</button>
+    </ng-container>
+  </div>
+</header>
