@@ -7,6 +7,8 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+//Animation lottie
+import { provideLottieOptions } from 'ngx-lottie';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -16,6 +18,11 @@ export const appConfig: ApplicationConfig = {
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
 
     // ✅ Provide Auth service (this was missing!)
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+
+    //lottie-web animation
+    provideLottieOptions({
+      player: () => import('lottie-web'),
+    })
   ]
 };

@@ -1,6 +1,7 @@
 .login-container {
   max-width: 400px;
-  margin: 5rem auto;
+  width: 100%;
+  margin: auto;
   padding: 2rem;
   background-color: #fff;
   border-radius: 8px;
@@ -48,5 +49,39 @@
 .loading-indicator {
   text-align: center;
   font-weight: bold;
+  padding: 2rem;
+}
+
+.login-wrapper{
+  width: 100vw;
+  height: 100vh;
+
+  // .login-wrapper-inner{
+  //   height: 100%;
+  // }
+  .banner{
+    background: #8ac3fb;
+  }
+  .login{
+    background: #efa19a;
+  }
+}
+.login-wrapper {
+  height: 100vh; // Full viewport height
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper-inner {
+  justify-content: center;    // Horizontal center
+  width: 100%;
+}
+
+.banner,
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
 }

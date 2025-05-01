@@ -81,3 +81,55 @@ input {
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
+
+// Lottie animation UI start here
+.login-lottie {
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 20px 1px;
+}
+.my-lottie-style{
+  position: relative;
+}
+.lottie-section{
+  // height: 100vh;
+  display: block;
+  margin: auto;
+}
+
+
+//Animation *************
+.login-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.login-lottie {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 500px;
+  height: 500px;
+  animation: floatAround 30s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none; /* Prevents blocking clicks */
+  opacity: 0.8;
+}
+
+.login-form {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Animation */
+@keyframes floatAround {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(20vw, 10vh); }
+  50%  { transform: translate(10vw, 20vh); }
+  75%  { transform: translate(-10vw, 10vh); }
+  100% { transform: translate(0, 0); }
+}
+
+//Animation *************
+// Lottie animation UI ends here

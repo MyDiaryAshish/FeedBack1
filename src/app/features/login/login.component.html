@@ -1,25 +1,29 @@
-<!-- <ng-container *ngIf="loading else loadingTemplate"> -->
-<div class="login-container">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
-    <input type="email" formControlName="email" placeholder="Email" class="login-input" />
+<div class="login-wrapper">
+  <div class="row login-wrapper-inner">
+    <div class="banner col-md-6 col-sm-12">
+      <app-lottie-character [animationType]="'banner'" [speed]="1"></app-lottie-character>
+    </div>
+    <div class="login col-md-6 col-sm-12">
+      <div class="login-container">
+      <app-lottie-character [animationType]="'login'"   [width]="'200px'"
+      [height]="'200px'"   [customClass]="'my-lottie-style'"
+      [speed]="0.5"></app-lottie-character>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
+          <input type="email" formControlName="email" placeholder="Email" class="login-input" />
 
-    <input type="password" formControlName="password" placeholder="Password" class="login-input" />
+          <input type="password" formControlName="password" placeholder="Password" class="login-input" />
 
-    <button type="submit" [disabled]="loading" class="login-button">
-      Login
-    </button>
-  </form>
+          <button type="submit" [disabled]="loading" class="login-button">
+            Login
+          </button>
+        </form>
 
-  <button (click)="loginWithGoogle()" [disabled]="loading" class="google-login-button">
-    Login with Google
-  </button>
+        <button (click)="loginWithGoogle()" [disabled]="loading" class="google-login-button">
+          Login with Google
+        </button>
 
-  <div *ngIf="error" class="login-error">{{ error }}</div>
-</div>
-<!-- </ng-container> -->
-
-<ng-template #loadingTemplate>
-  <div class="loading-indicator">
-    Loading...
+        <div *ngIf="error" class="login-error">{{ error }}</div>
+      </div>
+    </div>
   </div>
-</ng-template>
+</div>

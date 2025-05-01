@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
+import { LottieCharacterComponent } from "../../animations/lottie-character/lottie-character.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, LottieCharacterComponent],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -25,13 +26,13 @@ export class LoginComponent {
   loading:boolean = false;
 
   constructor(){
-    console.log("Login triggered constructor")
+    // console.log("Login triggered constructor")
 
   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    console.log("Login triggered ngOnInit")
+    // console.log("Login triggered ngOnInit")
   }
   async onSubmit() {
     if (this.form.invalid) return;
